@@ -1,0 +1,12 @@
+<div *ngFor="let news of newsHeadlines|slice:0:show let i = index">
+    <!-- headline -->
+    <span class="" style="font-size:1.5rem;"><strong><a href="{{news.url}}"  style="text-decoration: none">{{news.title}}</a></strong></span>
+    <br>
+    <span class="pt-2"style="font-style: italic;">[{{news.publishedAt}}]</span>
+    <!-- description -->
+    <p class="mt-3">{{news.description}}</p>
+
+    <p class="mt-2">{{news.content}}</p>
+    <button class="btn btn-primary mb-4" *ngIf="i==4 && show==5" (click)="show = newsHeadlines.length">Show More</button>
+</div>
+
